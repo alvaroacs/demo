@@ -28,4 +28,12 @@ switch ($route[0]) {
         // does that automatically
         $container->call($controller, $parameters);
         break;
+        import { ApplicationInsights } from '@microsoft/applicationinsights-web'
+
+const appInsights = new ApplicationInsights({ config: {
+  connectionString: '131b3512-09df-44ee-bb32-c3fbc7a067f8'
+  /* ...Other Configuration Options... */
+} });
+appInsights.loadAppInsights();
+appInsights.trackPageView(); // Manually call trackPageView to establish the current user/session/pageview
 }
